@@ -27,16 +27,18 @@ parser.add_argument('--file_name',
 
 args = parser.parse_args()
 
+
 def main():
-    country='United States of America'
+    country = 'United States of America'
     country_column = args.country_column
     fires_column = args.fires_column
     file_name = args.file_name
-    fires = get_column(file_name = file_name, 
-                       query_column = country_column, 
-                       query_value = country, 
-                       result_column = fires_column)
+    fires = get_column(file_name=file_name,
+                       query_column=country_column,
+                       query_value=country,
+                       result_column=fires_column)
     print(fires)
+
 
 if __name__ == "__main__":
     main()
