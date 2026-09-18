@@ -1,20 +1,21 @@
-def get_column(file_name, query_column, query_value, result_column = 1):
-    from pandas import read_csv
-    
+import pandas as pd
+
+
+def get_column(file_name, query_column, query_value, result_column):
     output = []
-    data = read_csv(file_name)
-    for idx, line in data.iterrows():
-        if type(query_column) == int:
-            if line.iloc[query_column] == query_value:
-                if type(result_column) == int:
-                    output.append(line.iloc[result_column])
-                else:
-                    output.append(line[result_column])
-        else:
-            if line[query_column] == query_value:
-                if type(result_column) == int:
-                    output.append(line.iloc[result_column])
-                else:
-                    output.append(line[result_column])
+
+    try:
+        data = pd.read_csv(file_name)
+    except (FileNotFoundError, OSError):
+        print(f"Error: could not open '{file_name}'.")
+        return []
+
+    for _, row in data.iterrows():
+        if row.iloc[query_column] == query_value:
+            try:
+                output.append(int(row.iloc[result_column]))
+            except (ValueError, TypeError):
+                print("Error: result could not be converted to an integer.")
+                return []
 
     return output
