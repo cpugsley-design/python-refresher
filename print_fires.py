@@ -27,7 +27,7 @@ parser.add_argument('--file_name',
 
 parser.add_argument('--calculation',
                     type=str,
-                    choices=["mean","median","std"],
+                    choices=["mean", "median", "std"],
                     help='Type of operation to be performed. Blank or other \
                         inputs means no operation is to be performed.',
                     required=False)
