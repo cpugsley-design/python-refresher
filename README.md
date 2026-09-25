@@ -2,11 +2,11 @@
 
 In Assignment 1, I made several additions that are noted here.\
 \
-(1) created a working get_columns function\
-(2) modified the get_columns function such that is can accommodate integer or 
+(1) Created a working get_columns function\
+(2) Modified the get_columns function such that is can accommodate integer or 
     string column inputs/outputs\
-(3) fixed the print_fires file such that is grabs the right columns\
-(4) modified the get_columns function to default the output column to column 1
+(3) Fixed the print_fires file such that is grabs the right columns\
+(4) Modified the get_columns function to default the output column to column 1.
     Note: print_fires already could accommodate this change\
 (5) Created a run.sh file to run the print_fires file\
 \
@@ -21,3 +21,15 @@ In Assignment 2, I made several changes that are noted here.\
     information as integers, including adding several possible exceptions\
 (5) Updated 'run.sh' to contain three test cases: one that runs properly, one
     that fails due to a file error, and one that fails due to an input error\
+\
+In Assignment 3, I made several changes that are noted here.\
+\
+(1) Added supplementary math functions 'mean', 'median', and 'std' to compute
+    the mean, median, and standard deviation of an input array, respectively\
+(2) Added this functionality to 'print_fires.py' such that you can now perform 
+    these basic operations on the number of yearly fires in a given country\
+(3) Created several unit tests for the new functions in 'my_utils.py' under the
+    'test_my_utils.py' file\
+(4) Created functional tests for 'print_fires.py' and stored these in
+    'test_print_fires.sh'\
+(5) Maintained PIP8 styleguide compliance
