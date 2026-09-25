@@ -1,5 +1,5 @@
 import argparse
-from my_utils import get_column
+from my_utils import get_column, mean, median, std
 
 parser = argparse.ArgumentParser(
                 description='Print fire counts for a specified country.',
@@ -25,6 +25,13 @@ parser.add_argument('--file_name',
                     help='Name of the file (Agrofood_co2_emission.csv)',
                     required=True)
 
+parser.add_argument('--calculation',
+                    type=str,
+                    help='Type of operation to be performed. Options are: \
+                        mean, median, and std. Blank or other inputs means no \
+                        operation is to be performed. Capitalization matters.',
+                    required=False)
+
 args = parser.parse_args()
 
 
@@ -37,7 +44,14 @@ def main():
                        query_column=country_column,
                        query_value=country,
                        result_column=fires_column)
-    print(fires)
+    if args.calculation == "mean":
+        print(mean(fires))
+    elif args.calculation == "median":
+        print(median(fires))
+    elif args.calculation == "std":
+        print(std(fires))
+    else:
+        print(fires)
 
 
 if __name__ == "__main__":
