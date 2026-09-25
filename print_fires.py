@@ -27,16 +27,16 @@ parser.add_argument('--file_name',
 
 parser.add_argument('--calculation',
                     type=str,
-                    help='Type of operation to be performed. Options are: \
-                        mean, median, and std. Blank or other inputs means no \
-                        operation is to be performed. Capitalization matters.',
+                    choices=["mean","median","std"],
+                    help='Type of operation to be performed. Blank or other \
+                        inputs means no operation is to be performed.',
                     required=False)
 
 args = parser.parse_args()
 
 
 def main():
-    country = 'United States of America'
+    country = args.country
     country_column = args.country_column
     fires_column = args.fires_column
     file_name = args.file_name
