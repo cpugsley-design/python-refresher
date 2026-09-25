@@ -20,3 +20,41 @@ def get_column(file_name, query_column, query_value, result_column):
                 sys.exit(1)
 
     return output
+
+def mean(array):
+    for i in range(len(array)):
+        if not isinstance(array[i], (float, int)) :
+            print("The array contains non-numeric entries.")
+            sys.exit(1)    
+    
+    if len(array) == 0:
+        print("This array is empty")
+        sys.exit(1)
+    else:
+        return sum(array) / len(array)
+
+def median(array):
+    for i in range(len(array)):
+        if not isinstance(array[i], (float, int)) :
+            print("The array contains non-numeric entries.")
+            sys.exit(1)  
+    if len(array) == 0:
+        print("This array is empty")
+        sys.exit(1)
+    else:
+        midpoint = len(array) // 2
+        if len(array) % 2 == 1:
+            return sorted(array)[midpoint]
+        else:
+            return (sorted(array)[midpoint-1] + sorted(array)[midpoint]) / 2
+        
+def std(array):
+    for i in range(len(array)):
+        if not isinstance(array[i], (float, int)) :
+            print("The array contains non-numeric entries.")
+            sys.exit(1)
+    if len(array) == 0:
+        print("This array is empty")
+        sys.exit(1)
+    else:
+        return (sum([(value - mean(array)) ** 2 for value in array]) / len(array)) ** 0.5
