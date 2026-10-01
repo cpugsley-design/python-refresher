@@ -50,7 +50,7 @@ class TestCalc(unittest.TestCase):
     def test_std_basic(self):
         # It is acceptable for this to output either a float or int
         self.assertAlmostEqual(my_utils.std([4, 5.0, 2, 1, 3]),
-                                sqrt(2), places=5)
+                            sqrt(2), places=5)
 
     def test_std_empty(self):
         self.assertRaises(SystemExit, my_utils.std, [])
