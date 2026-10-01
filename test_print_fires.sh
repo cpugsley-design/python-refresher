@@ -1,6 +1,6 @@
 #!/bin/bash
 
-test -e ssshtest || curl -sL https://raw.githubusercontent.com/ryanlayer/ssshtest/master/ssshtest
+test -e ssshtest || wget -q https://raw.githubusercontent.com/ryanlayer/ssshtest/master/ssshtest
 . ssshtest
 
 run invalid_column python print_fires.py --country Sweden --country_column h --fires_column 3 --file_name raw_data_test.csv
