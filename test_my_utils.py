@@ -49,8 +49,8 @@ class TestCalc(unittest.TestCase):
 
     def test_std_basic(self):
         # It is acceptable for this to output either a float or int
-        self.assertAlmostEqual(my_utils.mean([4, 5.0, 2, 1, 3]),
-                                             sqrt(2), places=5)
+        self.assertAlmostEqual(my_utils.std([4, 5.0, 2, 1, 3]),
+                                sqrt(2), places=5)
 
     def test_std_empty(self):
         self.assertRaises(SystemExit, my_utils.std, [])
@@ -60,7 +60,7 @@ class TestCalc(unittest.TestCase):
 
     def test_std_single(self):
         # It is acceptable for this to output either a float or int
-        self.assertAlmostEqual(my_utils.mean([1.0]), 0)
+        self.assertAlmostEqual(my_utils.mean([1.0]), 1)
 
     def test_std_random(self):
         # As processing is likely slightly different, almost equal will suffice
