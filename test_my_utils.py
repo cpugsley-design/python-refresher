@@ -8,14 +8,13 @@ from math import sqrt
 class TestCalc(unittest.TestCase):
     def test_mean_basic(self):
         # It is acceptable for this to output either a float or int
-        self.assertAlmostEqual(my_utils.mean([4, 5.0, 2, 1, 3], 3), places=5)
+        self.assertAlmostEqual(my_utils.mean([4, 5.0, 2, 1, 3]), 3, places=5)
 
     def test_mean_empty(self):
-        self.assertEqual(my_utils.mean([]), "This array is empty")
+        self.assertRaises(SystemExit, my_utils.mean, [])
 
     def test_mean_nonnumeric(self):
-        self.assertEqual(my_utils.mean([4, 5.0, 2, 1, "3"]),
-                         "The array contains non-numeric entries.")
+        self.assertRaises(SystemExit, my_utils.mean, [4, 5.0, 2, 1, "3"])
 
     def test_mean_single(self):
         # It is acceptable for this to output either a float or int
@@ -29,14 +28,13 @@ class TestCalc(unittest.TestCase):
 
     def test_median_basic(self):
         # It is acceptable for this to output either a float or int
-        self.assertAlmostEqual(my_utils.mean([4, 5.0, 2, 1, 3], 3), places=5)
+        self.assertAlmostEqual(my_utils.mean([4, 5.0, 2, 1, 3]), 3, places=5)
 
     def test_median_empty(self):
-        self.assertEqual(my_utils.mean([]), "This array is empty")
+        self.assertRaises(SystemExit, my_utils.median, [])
 
     def test_median_nonnumeric(self):
-        self.assertEqual(my_utils.mean([4, 5.0, 2, 1, "3"]),
-                         "The array contains non-numeric entries.")
+        self.assertRaises(SystemExit, my_utils.median, [4, 5.0, 2, 1, "3"])
 
     def test_median_single(self):
         # It is acceptable for this to output either a float or int
@@ -51,15 +49,14 @@ class TestCalc(unittest.TestCase):
 
     def test_std_basic(self):
         # It is acceptable for this to output either a float or int
-        self.assertAlmostEqual(my_utils.mean([4, 5.0, 2, 1, 3],
-                                             sqrt(2)), places=5)
+        self.assertAlmostEqual(my_utils.mean([4, 5.0, 2, 1, 3]),
+                                             sqrt(2), places=5)
 
     def test_std_empty(self):
-        self.assertEqual(my_utils.mean([]), "This array is empty")
+        self.assertRaises(SystemExit, my_utils.std, [])
 
     def test_std_nonnumeric(self):
-        self.assertEqual(my_utils.mean([4, 5.0, 2, 1, "3"]),
-                         "The array contains non-numeric entries.")
+        self.assertRaises(SystemExit, my_utils.std, [4, 5.0, 2, 1, "3"])
 
     def test_std_single(self):
         # It is acceptable for this to output either a float or int
