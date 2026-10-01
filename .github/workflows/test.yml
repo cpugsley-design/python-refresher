@@ -7,12 +7,13 @@ on:
 
 defaults:
   run:
-    shell: bash -el {0}
+    shell: bash -l {0}
 
 jobs:
 
   run_style_check:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v7
 
@@ -20,12 +21,13 @@ jobs:
         with:
           environment-file: environment.yml
           init-shell: bash
-          generate-run-shell: false
 
       - run: pycodestyle $(git ls-files "*.py")
 
+
   run_unit_tests:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v7
 
@@ -33,12 +35,13 @@ jobs:
         with:
           environment-file: environment.yml
           init-shell: bash
-          generate-run-shell: false
 
-      - run: python -m unittest test_my_utils
+      - run: python -m unittest test_my_utils.py
+
 
   run_functional_tests:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v7
 
@@ -46,6 +49,5 @@ jobs:
         with:
           environment-file: environment.yml
           init-shell: bash
-          generate-run-shell: false
 
       - run: bash test_print_fires.sh
