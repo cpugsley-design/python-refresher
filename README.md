@@ -32,15 +32,15 @@ In Assignment 3, I made several changes that are noted here.\
     'test_my_utils.py' file\
 (4) Created functional tests for 'print_fires.py' and stored these in
     'test_print_fires.sh'\
-(5) Maintained PIP8 styleguide compliance
+(5) Maintained PIP8 styleguide compliance\
 \
 In Assignment 4, I made several changes that are noted here.\
 \
-(1) Added three tests to 'test.yml' under '.git/workflows' to automatically\
-    run pycodestyle, 'test_my_utils.py', and 'test_print_fires.sh' upon either\
-    push or commit
-(2) Updated several tests to run on the git startup linux server
-(3) Updated the 'environment.yml' file to be compatible with linux, whereas it\
-    was only compatible with windows systems beforehand and would not run with\
-    Github workflows
+(1) Added three tests to 'test.yml' under '.git/workflows' to automatically
+    run pycodestyle, 'test_my_utils.py', and 'test_print_fires.sh' upon either
+    push or commit\
+(2) Updated several tests to run on the git startup linux server\
+(3) Updated the 'environment.yml' file to be compatible with linux, whereas it
+    was only compatible with windows systems beforehand and would not run with
+    Github workflows\
 (4) Maintained PIP8 styleguide compliance
